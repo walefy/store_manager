@@ -4,9 +4,12 @@
   "type": "module",
   "scripts": {
     "start": "bun src/server.ts",
-    "dev": "bun run --hot src/server.ts"
+    "dev": "bun run --hot src/server.ts",
+    "lint": "bunx @biomejs/biome lint",
+    "fmt": "bunx @biomejs/biome format --fix"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.8.0",
     "@types/bun": "latest"
   },
   "peerDependencies": {

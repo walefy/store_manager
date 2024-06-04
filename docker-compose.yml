@@ -1,0 +1,22 @@
+services:
+  api:
+    build: .
+    container_name: "store_manager_api"
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
+  db:
+    image: mysql
+    container_name: "store_manager_db"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: store_manager
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5

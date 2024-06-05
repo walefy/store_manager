@@ -1,11 +1,13 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.8.0/schema.json",
+  "files": {
+    "ignore": ["node_modules", "dist", "build", ".vscode", ".git", "./src/database/migrations"]
+  },
   "organizeImports": {
     "enabled": true
   },
   "formatter": {
     "enabled": true,
-    "ignore": ["node_modules", "dist", "build", ".vscode", ".git"],
     "indentWidth": 2,
     "indentStyle": "space",
     "lineWidth": 100,

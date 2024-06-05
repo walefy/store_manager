@@ -4,16 +4,25 @@ services:
     container_name: "store_manager_api"
     ports:
       - "3000:3000"
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=store_manager
+
     volumes:
       - .:/app
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
   db:
     image: mysql
     container_name: "store_manager_db"
+    ports:
+      - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: store_manager
     healthcheck:
       test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]

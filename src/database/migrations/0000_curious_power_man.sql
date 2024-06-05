@@ -1,11 +1,11 @@
 CREATE TABLE `products` (
-	`id` int NOT NULL,
+	`id` int AUTO_INCREMENT NOT NULL,
 	`name` varchar(30) NOT NULL,
 	CONSTRAINT `products_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
 CREATE TABLE `sales` (
-	`id` int NOT NULL,
+	`id` int AUTO_INCREMENT NOT NULL,
 	`date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT `sales_id` PRIMARY KEY(`id`)
 );

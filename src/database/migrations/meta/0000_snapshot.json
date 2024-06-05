@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "mysql",
-  "id": "f2145867-e289-497e-9237-a763bc69a674",
+  "id": "d527dd73-a7fb-4f0a-84cf-603ea01fe137",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "products": {
@@ -12,7 +12,7 @@
           "type": "int",
           "primaryKey": false,
           "notNull": true,
-          "autoincrement": false
+          "autoincrement": true
         },
         "name": {
           "name": "name",
@@ -27,7 +27,9 @@
       "compositePrimaryKeys": {
         "products_id": {
           "name": "products_id",
-          "columns": ["id"]
+          "columns": [
+            "id"
+          ]
         }
       },
       "uniqueConstraints": {}
@@ -40,7 +42,7 @@
           "type": "int",
           "primaryKey": false,
           "notNull": true,
-          "autoincrement": false
+          "autoincrement": true
         },
         "date": {
           "name": "date",
@@ -56,7 +58,9 @@
       "compositePrimaryKeys": {
         "sales_id": {
           "name": "sales_id",
-          "columns": ["id"]
+          "columns": [
+            "id"
+          ]
         }
       },
       "uniqueConstraints": {}
@@ -85,8 +89,12 @@
           "name": "sales_products_product_id_products_id_fk",
           "tableFrom": "sales_products",
           "tableTo": "products",
-          "columnsFrom": ["product_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "product_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -94,8 +102,12 @@
           "name": "sales_products_sale_id_sales_id_fk",
           "tableFrom": "sales_products",
           "tableTo": "sales",
-          "columnsFrom": ["sale_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "sale_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -103,7 +115,10 @@
       "compositePrimaryKeys": {
         "sales_products_product_id_sale_id_pk": {
           "name": "sales_products_product_id_sale_id_pk",
-          "columns": ["product_id", "sale_id"]
+          "columns": [
+            "product_id",
+            "sale_id"
+          ]
         }
       },
       "uniqueConstraints": {}

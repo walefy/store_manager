@@ -2,12 +2,12 @@ import { relations, sql } from 'drizzle-orm';
 import { datetime, int, mysqlTable, primaryKey, varchar } from 'drizzle-orm/mysql-core';
 
 export const products = mysqlTable('products', {
-  id: int('id').primaryKey(),
+  id: int('id').primaryKey().autoincrement(),
   name: varchar('name', { length: 30 }).notNull(),
 });
 
 export const sales = mysqlTable('sales', {
-  id: int('id').primaryKey(),
+  id: int('id').primaryKey().autoincrement(),
   date: datetime('date').notNull().default(sql`CURRENT_TIMESTAMP`),
 });
 

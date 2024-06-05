@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "start": "bun src/server.ts",
+    "predev": "bun db:migrate",
     "dev": "bun run --hot src/server.ts",
     "lint": "bunx @biomejs/biome lint",
     "fmt": "bunx @biomejs/biome format --fix",

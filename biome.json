@@ -27,6 +27,14 @@
     "enabled": true,
     "rules": {
       "recommended": true,
+      "correctness": {
+        "noUnusedImports": "error",
+        "noUnusedVariables": "error",
+        "noUnusedPrivateClassMembers": "error"
+      },
+      "suspicious": {
+        "noEmptyBlockStatements": "error"
+      },
       "style": {
         "noVar": "error",
         "useNamingConvention": "error",
